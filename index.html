@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Irene Vlastou</title>
+<meta name="description" content="Irene Vlastou — papyrologist and classicist, MSc student in Digital Methods for the Humanities at AUEB, working on palaeography, papyrology and digital methods for the humanities.">
+<meta name="author" content="Irene Vlastou">
+
+<meta property="og:title" content="Irene Vlastou">
+<meta property="og:description" content="Papyrology, palaeography and digital methods for the humanities.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+    --bg: #fbf8f1;
+    --text: #2e2a24;
+    --muted: #776e60;
+    --link: #9a4a24;
+    --link-hover: #c27a1a;
+    --rule: #e8e0cf;
+    --hover-bg: #f3eddf;
+    --maxw: 820px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1915;
+      --text: #e8e1d4;
+      --muted: #a49a88;
+      --link: #e0946a;
+      --link-hover: #e8b45a;
+      --rule: #353026;
+      --hover-bg: #25211b;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    padding: 0 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; }
+
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-hover); }
+  a:focus-visible {
+    outline: 2px solid var(--link-hover);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ---------- Header ---------- */
+  header { padding: 56px 0 8px; }
+
+  .intro { max-width: 68ch; }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+    line-height: 1.2;
+  }
+
+  .intro p { margin: 0 0 14px; }
+
+  .contact {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 15px;
+  }
+  .contact a { margin: 0 2px; }
+
+  /* ---------- Nav ---------- */
+  nav {
+    margin: 34px 0 10px;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 26px;
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding-top: 44px; }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0 0 6px;
+  }
+
+  .section-note {
+    color: var(--muted);
+    margin: 0 0 22px;
+    max-width: 62ch;
+  }
+
+  /* ---------- News ---------- */
+  .news { list-style: none; margin: 0; padding: 0; }
+
+  .news li {
+    display: grid;
+    grid-template-columns: 118px 1fr;
+    gap: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .news .date {
+    color: var(--muted);
+    font-size: 14px;
+    padding-top: 2px;
+  }
+
+  details.older { margin-top: 16px; }
+  details.older > summary {
+    cursor: pointer;
+    color: var(--link);
+    font-size: 15px;
+    list-style: none;
+    display: inline-block;
+  }
+  details.older > summary::-webkit-details-marker { display: none; }
+  details.older > summary::before { content: "\25B8  "; }
+  details.older[open] > summary::before { content: "\25BE  "; }
+  details.older > summary:hover { color: var(--link-hover); }
+  details.older > ul { margin-top: 12px; }
+
+  /* ---------- Publications ---------- */
+  .pub {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 18px 14px;
+    margin: 0 -14px;
+    border-radius: 8px;
+    transition: background-color 0.15s ease;
+  }
+  .pub:hover { background: var(--hover-bg); }
+
+  .pub img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    background: var(--hover-bg);
+    display: block;
+  }
+
+  .pub-title {
+    font-weight: 700;
+    margin: 0 0 4px;
+    line-height: 1.35;
+  }
+
+  .authors { margin: 0 0 2px; }
+  .authors .me { font-style: italic; }
+
+  .venue {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 6px;
+  }
+
+  .pub-links { font-size: 15px; }
+  .pub-links span { color: var(--rule); margin: 0 5px; }
+
+  .pub-note {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 6px 0 0;
+  }
+
+  /* ---------- Lists ---------- */
+  h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 30px 0 10px;
+  }
+
+  .activities { list-style: none; margin: 0; padding: 0; }
+  .activities li {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .activities .when { color: var(--muted); }
+  .activities .role { font-weight: 700; }
+  .activities p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 700px) {
+    header { padding-top: 36px; }
+    h1 { font-size: 26px; }
+    .pub { grid-template-columns: 1fr; gap: 14px; }
+    .pub img { max-width: 320px; }
+    .news li { grid-template-columns: 1fr; gap: 2px; }
+    .cols { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<!-- =================== HEADER =================== -->
+<header>
+  <div class="intro">
+    <h1>Irene Vlastou</h1>
+
+    <p>
+      I'm a classicist and papyrologist based in Athens, currently doing a Master's in
+      <a href="https://www.aueb.gr/">Digital Methods for the Humanities</a>
+      at the Department of Informatics, Athens University of Economics and Business.
+      I work on the point where ancient written material meets computational method:
+      palaeography, papyrus editing, knowledge graphs and text annotation.
+    </p>
+
+    <p>
+      I hold a Master's in Papyrology and Classics from the
+      <a href="https://en.uoa.gr/">National and Kapodistrian University of Athens</a>,
+      where my thesis on palaeographical terminology and non-literary writing in papyri
+      received the Lysimachos Kaftantzoglou Prize. Since July 2026 I have been a junior
+      research associate at the
+      <a href="https://www.historyofideas.gr/p/eirini-vlastou.html">Laboratory for Political
+      and Institutional Theory and the History of Ideas</a> at NKUA.
+      Since 2024 I have also been an annotator
+      for the Greek corpus of <a href="https://gitlab.com/parseme">PARSEME</a>
+      at the University of Oxford, and I recently worked with the Digital Assets
+      Department of the <a href="https://www.bsa.ac.uk/">British School at Athens</a>
+      on GIS material for the Fitch Laboratory.
+    </p>
+
+    <p>
+      I'm open to research positions and collaborations in digital classics,
+      papyrology and cultural heritage data. Do get in touch.
+    </p>
+
+    <p class="contact">
+      <a href="mailto:vlastou.irini@gmail.com">Email</a> /
+      <a href="pdfs/cv.pdf">CV</a> /
+      <a href="https://orcid.org/0009-0008-3992-0409">ORCID</a> /
+      <a href="https://pergamos.lib.uoa.gr/item/uoadl:3255813">Thesis</a>
+      <!-- Add when you have them:
+      / <a href="https://github.com/yourusername">GitHub</a>
+      / <a href="https://www.linkedin.com/in/yourusername/">LinkedIn</a> -->
+    </p>
+  </div>
+
+  <nav>
+    <a href="#news">News</a>
+    <a href="#research">Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#training">Training &amp; Skills</a>
+  </nav>
+</header>
+
+<!-- =================== NEWS =================== -->
+<section id="news">
+  <h2>News</h2>
+
+  <ul class="news">
+    <li>
+      <span class="date">July 2026</span>
+      <span>Joined the <a href="https://www.historyofideas.gr/p/eirini-vlastou.html">Laboratory
+        for Political and Institutional Theory and the History of Ideas</a> at NKUA as a
+        junior research associate.</span>
+    </li>
+    <li>
+      <span class="date">2026</span>
+      <span>Completed a month-long internship with the Digital Assets Department at the
+        <a href="https://www.bsa.ac.uk/">British School at Athens</a>, building a mosaic of
+        the geological maps of the Peloponnese and a spatial dataset of geological samples
+        for the Fitch Laboratory.</span>
+    </li>
+    <li>
+      <span class="date">2025</span>
+      <span>Started the Master's in Digital Methods for the Humanities at the
+        Department of Informatics, AUEB.</span>
+    </li>
+    <li>
+      <span class="date">2024</span>
+      <span>My Master's thesis on palaeographical terminology in Greek was awarded the
+        <strong>Lysimachos Kaftantzoglou Prize</strong> for outstanding theses by the
+        University of Athens.
+        <a href="https://pergamos.lib.uoa.gr/item/uoadl:3255813">Read it here</a>.</span>
+    </li>
+    <li>
+      <span class="date">2024</span>
+      <span>Joined the <a href="https://gitlab.com/parseme">PARSEME</a> Greek corpus project
+        at the University of Oxford as an annotator of multi-word expressions.</span>
+    </li>
+  </ul>
+
+  <details class="older">
+    <summary>See older news</summary>
+    <ul class="news">
+      <li>
+        <span class="date">2023</span>
+        <span>Published "A Letter from Petesuchos to Ptolemaios from the Cologne Papyrus
+          Collection" in <em>Zeitschrift für Papyrologie und Epigraphik</em> 227.</span>
+      </li>
+      <li>
+        <span class="date">April 2023</span>
+        <span>Presented "A Letter from Petesuchos to Ptolemaios" at the Papyrological
+          Conference organised by NKUA with the University of Cologne, Athens.</span>
+      </li>
+      <li>
+        <span class="date">2021</span>
+        <span>Research fellow at the Laboratory for the Management of Greek and Latin
+          Resources, NKUA, working on palaeography and Greek and Latin text corpora.</span>
+      </li>
+      <li>
+        <span class="date">2019</span>
+        <span>Three-month internship at the Epigraphic Museum, Athens.</span>
+      </li>
+    </ul>
+  </details>
+</section>
+
+<!-- =================== RESEARCH =================== -->
+<section id="research">
+  <h2>Research</h2>
+  <p class="section-note">
+    I work on Greek papyri and palaeography, on the vocabulary we use to describe ancient
+    hands, and on how digital methods — corpora, annotation, ontologies and spatial data —
+    can be applied to material of this kind.
+  </p>
+
+  <article class="pub">
+    <img alt="Cologne papyrus fragment"
+         src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23e9edf2'/%3E%3Ctext x='200' y='158' font-family='sans-serif' font-size='19' fill='%23808a96' text-anchor='middle'%3Epetesuchos.jpg%3C/text%3E%3C/svg%3E">
+    <div>
+      <p class="pub-title">A Letter from Petesuchos to Ptolemaios from the Cologne Papyrus Collection</p>
+      <p class="authors"><span class="me">Irene Vlastou</span>, Georgia Zampiakou, Angeliki Petropoulou</p>
+      <p class="venue">Zeitschrift für Papyrologie und Epigraphik 227, 129–132, 2023</p>
+      <p class="pub-note">
+        Edition of a private letter from the Cologne collection, first presented at the
+        2023 Athens–Cologne papyrological conference.
+      </p>
+    </div>
+  </article>
+
+  <h3>Thesis</h3>
+
+  <article class="pub">
+    <img alt="Master's thesis"
+         src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23e9edf2'/%3E%3Ctext x='200' y='158' font-family='sans-serif' font-size='19' fill='%23808a96' text-anchor='middle'%3Ethesis.jpg%3C/text%3E%3C/svg%3E">
+    <div>
+      <p class="pub-title">
+        <a href="https://pergamos.lib.uoa.gr/item/uoadl:3255813">Palaeography Handbook:
+        translation suggestions for establishing palaeographical terminology in Modern Greek,
+        with a study of non-literary writing in the papyri</a>
+      </p>
+      <p class="venue">Master's thesis, Papyrology and Classics, NKUA</p>
+      <p class="pub-links">
+        <a href="https://pergamos.lib.uoa.gr/item/uoadl:3255813">full text</a>
+      </p>
+      <p class="pub-note">
+        Awarded the Lysimachos Kaftantzoglou Prize for outstanding theses, University of Athens.
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- =================== EXPERIENCE =================== -->
+<section id="experience">
+  <h2>Experience</h2>
+
+  <ul class="activities">
+    <li>
+      <span class="when">Jul 2026 – present</span> — <span class="role">Junior Research Associate</span>,
+      <a href="https://www.historyofideas.gr/p/eirini-vlastou.html">Laboratory for Political and
+      Institutional Theory and the History of Ideas</a>, NKUA.
+    </li>
+    <li>
+      <span class="when">2026</span> — <span class="role">Intern, Digital Assets Department</span>,
+      British School at Athens.
+      <p>Assembled a mosaic of some twenty geological maps of the Peloponnese, built the
+      spatial dataset of geological samples for the region against the BSA data model,
+      produced reusable cartographic templates for the Fitch Laboratory, and developed a
+      web form for field sampling.</p>
+    </li>
+    <li>
+      <span class="when">2024 – present</span> — <span class="role">Annotator</span>,
+      PARSEME Greek corpus, University of Oxford.
+      <p>Annotation of multi-word expressions for a network devoted to their role in parsing
+      and natural language processing.</p>
+    </li>
+    <li>
+      <span class="when">2024 – 2025</span> — <span class="role">Executive Assistant</span>,
+      Klidarithmos Publications.
+    </li>
+    <li>
+      <span class="when">Jul – Nov 2021</span> — <span class="role">Research Fellow (Classicist)</span>,
+      Digital Humanities Lab (DHLab), NKUA. Part-time.
+      <p>Laboratory for the Management of Greek and Latin Resources, within the EU-funded
+      DELA project. Main focus: palaeography, Ancient Greek and Latin text corpora, manuscripts.</p>
+    </li>
+    <li>
+      <span class="when">2020 – 2023</span> — <span class="role">Teacher</span> of Ancient and
+      Modern Greek, after-school centre.
+    </li>
+    <li>
+      <span class="when">2019</span> — <span class="role">Intern</span>, Epigraphic Museum, Athens.
+    </li>
+  </ul>
+
+  <h3>Volunteering</h3>
+  <ul class="activities">
+    <li>
+      <span class="when">2025</span> — Open House Athens, Zappeion Hall. Researched and wrote
+      the tour text, and guided visitors through the building.
+    </li>
+  </ul>
+</section>
+
+<!-- =================== TRAINING =================== -->
+<section id="training">
+  <h2>Training &amp; Skills</h2>
+
+  <h3>Education</h3>
+  <ul class="activities">
+    <li><span class="when">2025 – 2026</span> — MSc in Digital Methods for the Humanities,
+      Department of Informatics, AUEB (in progress).</li>
+    <li><span class="when">2020 – 2022</span> — MA in Papyrology and Classics, NKUA. Grade 9.97/10.</li>
+    <li><span class="when">2015 – 2020</span> — BA in Greek Philology and Classics, NKUA. Grade 8.73/10.</li>
+    <li><span class="when">2025</span> — Digital Copywriter, NKUA e-learning.</li>
+    <li><span class="when">2024 – 2025</span> — Applied School Psychology, NKUA e-learning.</li>
+    <li><span class="when">2021</span> — Protection and Maintenance of Libraries and Archives,
+      NKUA e-learning.</li>
+  </ul>
+
+  <h3>Seminars</h3>
+  <ul class="activities">
+    <li><span class="when">2022 – 2023</span> — Introduction to Ottoman Palaeography
+      (G. Liakopoulos) and Ancient Greek Numismatics (Ev. Markou), National Hellenic Research Foundation.</li>
+    <li><span class="when">2021 – 2022</span> — Byzantine Sigillography (V. Maladakis) and
+      Greek Palaeography (Z. Melissakis), National Hellenic Research Foundation.</li>
+    <li><span class="when">2020 – 2021</span> — Workshop on the
+      <a href="https://papyri.info/">papyri.info</a> platform (Prof. James Cowey): edited and
+      submitted fifteen texts with metadata. Greek Palaeography, first cycle (A. Tselikas),
+      National Bank of Greece Cultural Foundation.</li>
+  </ul>
+
+  <div class="cols">
+    <div>
+      <h3>Languages</h3>
+      <ul class="activities">
+        <li>Greek — native</li>
+        <li>English — proficiency (Michigan, Cambridge)</li>
+        <li>German — C1</li>
+        <li>French — A2</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Technical</h3>
+      <ul class="activities">
+        <li>Python, SQL, SPARQL, Neo4j</li>
+        <li>Knowledge graphs, ontologies, conceptual modelling</li>
+        <li>NLP and corpus annotation</li>
+        <li>Metadata standards (Dublin Core), EpiDoc/papyri.info</li>
+        <li>GIS and cartographic production</li>
+        <li>HTML and CSS</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Last updated: August 2026<br>
+  Layout inspired by <a href="https://jonbarron.info">Jon Barron's website</a>.
+</footer>
+
+</div>
+</body>
+</html>
