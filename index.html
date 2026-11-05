@@ -102,37 +102,6 @@
     max-width: 62ch;
   }
 
-  /* ---------- News ---------- */
-  .news { list-style: none; margin: 0; padding: 0; }
-
-  .news li {
-    display: grid;
-    grid-template-columns: 118px 1fr;
-    gap: 18px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .news .date {
-    color: var(--muted);
-    font-size: 14px;
-    padding-top: 2px;
-  }
-
-  details.older { margin-top: 16px; }
-  details.older > summary {
-    cursor: pointer;
-    color: var(--link);
-    font-size: 15px;
-    list-style: none;
-    display: inline-block;
-  }
-  details.older > summary::-webkit-details-marker { display: none; }
-  details.older > summary::before { content: "\25B8  "; }
-  details.older[open] > summary::before { content: "\25BE  "; }
-  details.older > summary:hover { color: var(--link-hover); }
-  details.older > ul { margin-top: 12px; }
-
   /* ---------- Publications ---------- */
   .pub {
     display: grid;
@@ -217,7 +186,6 @@
     h1 { font-size: 26px; }
     .pub { grid-template-columns: 1fr; gap: 14px; }
     .pub img { max-width: 320px; }
-    .news li { grid-template-columns: 1fr; gap: 2px; }
     .cols { grid-template-columns: 1fr; }
   }
 </style>
@@ -271,75 +239,12 @@
   </div>
 
   <nav>
-    <a href="#news">News</a>
     <a href="#research">Research</a>
     <a href="#experience">Experience</a>
     <a href="#training">Training &amp; Skills</a>
   </nav>
 </header>
 
-<!-- =================== NEWS =================== -->
-<section id="news">
-  <h2>News</h2>
-
-  <ul class="news">
-    <li>
-      <span class="date">July 2026</span>
-      <span>Joined the <a href="https://www.historyofideas.gr/p/eirini-vlastou.html">Laboratory
-        for Political and Institutional Theory and the History of Ideas</a> at NKUA as a
-        junior research associate.</span>
-    </li>
-    <li>
-      <span class="date">2026</span>
-      <span>Completed a month-long internship with the Digital Assets Department at the
-        <a href="https://www.bsa.ac.uk/">British School at Athens</a>, building a mosaic of
-        the geological maps of the Peloponnese and a spatial dataset of geological samples
-        for the Fitch Laboratory.</span>
-    </li>
-    <li>
-      <span class="date">2025</span>
-      <span>Started the Master's in Digital Methods for the Humanities at the
-        Department of Informatics, AUEB.</span>
-    </li>
-    <li>
-      <span class="date">2024</span>
-      <span>My Master's thesis on palaeographical terminology in Greek was awarded the
-        <strong>Lysimachos Kaftantzoglou Prize</strong> for outstanding theses by the
-        University of Athens.
-        <a href="https://pergamos.lib.uoa.gr/item/uoadl:3255813">Read it here</a>.</span>
-    </li>
-    <li>
-      <span class="date">2024</span>
-      <span>Joined the <a href="https://gitlab.com/parseme">PARSEME</a> Greek corpus project
-        at the University of Oxford as an annotator of multi-word expressions.</span>
-    </li>
-  </ul>
-
-  <details class="older">
-    <summary>See older news</summary>
-    <ul class="news">
-      <li>
-        <span class="date">2023</span>
-        <span>Published "A Letter from Petesuchos to Ptolemaios from the Cologne Papyrus
-          Collection" in <em>Zeitschrift für Papyrologie und Epigraphik</em> 227.</span>
-      </li>
-      <li>
-        <span class="date">April 2023</span>
-        <span>Presented "A Letter from Petesuchos to Ptolemaios" at the Papyrological
-          Conference organised by NKUA with the University of Cologne, Athens.</span>
-      </li>
-      <li>
-        <span class="date">2021</span>
-        <span>Research fellow at the Laboratory for the Management of Greek and Latin
-          Resources, NKUA, working on palaeography and Greek and Latin text corpora.</span>
-      </li>
-      <li>
-        <span class="date">2019</span>
-        <span>Three-month internship at the Epigraphic Museum, Athens.</span>
-      </li>
-    </ul>
-  </details>
-</section>
 
 <!-- =================== RESEARCH =================== -->
 <section id="research">
